@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BE.Example.ViewModels.StatusVM>
+
+@{
+    ViewData["Title"] = "Status";
+}
+
+<h1>Status</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Language)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Translated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InReview)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language.Name)
+            </td>
+            <td>
+                @if (item.Country == null)
+                {
+                    <label>--</label>
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.Country.Name)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Translated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InReview)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

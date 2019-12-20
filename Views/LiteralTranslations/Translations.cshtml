@@ -1,0 +1,62 @@
+﻿@model IEnumerable<BE.Example.Models.LiteralTranslation>
+
+@{
+    ViewData["Title"] = "Literal Translations";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Language)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Literal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValueZero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValueOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValueMany)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InReview)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language.LanguageId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country.CountryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Literal.LiteralId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValueZero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValueOne)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValueMany)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InReview)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

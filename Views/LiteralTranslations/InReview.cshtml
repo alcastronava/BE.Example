@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BE.Example.ViewModels.InReviewVM>
+
+@{
+    ViewData["Title"] = "In Review";
+}
+
+<h1>In Review</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Language)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Literal)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Literal)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

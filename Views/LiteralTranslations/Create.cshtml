@@ -1,0 +1,60 @@
+﻿@model BE.Example.Models.LiteralTranslation
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>LiteralTranslation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LanguageId" class="control-label"></label>
+                <select asp-for="LanguageId" class ="form-control" asp-items="ViewBag.LanguageId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryId" class="control-label"></label>
+                <select asp-for="CountryId" class ="form-control" asp-items="ViewBag.CountryId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="LiteralId" class="control-label"></label>
+                <select asp-for="LiteralId" class ="form-control" asp-items="ViewBag.LiteralId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValueZero" class="control-label"></label>
+                <input asp-for="ValueZero" class="form-control" />
+                <span asp-validation-for="ValueZero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValueOne" class="control-label"></label>
+                <input asp-for="ValueOne" class="form-control" />
+                <span asp-validation-for="ValueOne" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValueMany" class="control-label"></label>
+                <input asp-for="ValueMany" class="form-control" />
+                <span asp-validation-for="ValueMany" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="InReview" /> @Html.DisplayNameFor(model => model.InReview)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
